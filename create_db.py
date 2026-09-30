@@ -1,12 +1,10 @@
 import sqlite3
 import os
 
-# Спробуємо створити базу в тій же папці, де лежить сам скрипт
 db_path = os.path.join(os.path.dirname(__file__), "social_network.db")
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
-# Вмикаємо підтримку зовнішніх ключів
 cursor.execute("PRAGMA foreign_keys = ON;")
 
 # USERS
